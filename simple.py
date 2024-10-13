@@ -52,7 +52,7 @@ class simplemessenger():
 
             self.driver.get(url)
 
-            # find_elements will return an empty list. An empty list is false.
+            # find_elements may return an empty list. An empty list is false.
             if self.driver.find_elements("xpath",'/html/body/div[1]/div/div/div[2]/div[3]/div[1]/div/div/div[2]/div/canvas'):
                 qrcode = self.driver.find_element("xpath",'/html/body/div[1]/div/div/div[2]/div[3]/div[1]/div/div/div[2]/div/canvas')
                 qrcode.screenshot(f'{os.path.dirname(__file__)}{os.path.sep}qrcode.png') # This can be used to show the QR code while headless.
