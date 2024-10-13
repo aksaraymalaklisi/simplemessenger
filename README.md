@@ -1,0 +1,1 @@
+O simplemessenger é utilizado para enviar mensagens no WhatsApp Web usando Selenium.
