@@ -39,7 +39,7 @@ class simplemessenger():
             self.driver.quit()
             # I wanted to solve anything that needed to wait for load with implicitly_wait(), 
             # but because WhatsApp does not send the message immediately, the driver quits before it sends anything, even though it could find the element and press ENTER.
-            # This can probably be fixed by checking if a new message was sent or if the text box is empty, which would cause a implicit wait.
+            # This can probably be fixed by checking if a new message was sent or if the text box is empty, which would cause an implicit wait.
 
         except Exception as exception:
             print('simple:', exception)
@@ -55,7 +55,7 @@ class simplemessenger():
             # find_elements will return an empty list. An empty list is false.
             if self.driver.find_elements("xpath",'/html/body/div[1]/div/div/div[2]/div[3]/div[1]/div/div/div[2]/div/canvas'):
                 qrcode = self.driver.find_element("xpath",'/html/body/div[1]/div/div/div[2]/div[3]/div[1]/div/div/div[2]/div/canvas')
-                qrcode.screenshot(f'{os.path.dirname(__file__)}{os.path.sep}qrcode.png') # This can be used to show the QR code while headless.
+                qrcode.screenshot(f'{os.path.dirname(__file__)}{os.path.sep}qrcode.png') # This can be used to get the QR code while headless.
             else:
                  print('simple: qr code not found')
             
